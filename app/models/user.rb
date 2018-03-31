@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :accounts
+  has_many :login_log
+
+  def after_database_authentication
+    LoginLog.create(login_time: current_sign_in_at, ip_address: current_sign_in_ip, user: self)
+  end
 end

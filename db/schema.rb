@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331094047) do
+ActiveRecord::Schema.define(version: 20180331094727) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "general_income"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20180331094047) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "login_logs", force: :cascade do |t|
+    t.datetime "login_time"
+    t.string   "ip_address"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_login_logs_on_user_id"
   end
 
   create_table "models", force: :cascade do |t|
