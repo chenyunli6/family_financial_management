@@ -21,7 +21,10 @@
             <ul class="dropdown-menu">
               <li><%= link_to("收支记录",accounts_path) %></li>
               <li><%#= link_to("财务统计",account_posts_path) %></li>
+              <% if current_user.is_admin %>
+              <li class="divider"></li
               <li><%#= link_to("登录日志",account_posts_path) %></li>
+              <% end %>
               <li class="divider"></li>
               <li><%= link_to("登出",destroy_user_session_path,method: :delete) %></li>
             </ul>
