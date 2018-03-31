@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331101710) do
+ActiveRecord::Schema.define(version: 20180331120800) do
 
   create_table "accounts", force: :cascade do |t|
-    t.decimal  "general_income"
-    t.decimal  "general_expenses"
-    t.decimal  "other_income"
-    t.decimal  "other_expenses"
+    t.decimal  "general_income",   default: "0.0"
+    t.decimal  "general_expenses", default: "0.0"
+    t.decimal  "other_income",     default: "0.0"
+    t.decimal  "other_expenses",   default: "0.0"
     t.string   "label"
     t.string   "memo"
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
