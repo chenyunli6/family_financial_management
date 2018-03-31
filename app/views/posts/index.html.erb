@@ -1,0 +1,19 @@
+<div class="accounts-index-container">
+  <div class="actions">
+    <%= link_to "新增", new_post_path, class: "btn btn-primary pull-right" %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 15%;">文章标题</th>
+        <th style="width: 38%;">文章内容</th>
+        <th>创建时间</th>
+        <th>更新时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @posts %>
+    </tbody>
+  </table>
+</div>

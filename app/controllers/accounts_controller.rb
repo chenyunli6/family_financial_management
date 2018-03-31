@@ -14,8 +14,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = current_user.accounts.build(account_params)
-    if @account.save
+    if current_user.accounts.create(account_params)
       redirect_to accounts_path, notice: "新增成功！"
     else
       render :back

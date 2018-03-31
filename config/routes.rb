@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :home, only: :index
   resources :accounts
+  resources :posts
   resources :login_logs, only: :index
 end
