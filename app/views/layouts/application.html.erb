@@ -10,10 +10,11 @@
 
   <body>
     <div class="container">
+      <%= render "common/flashes" %>
       <%= render "common/navbar" %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
+
+    <%= render "common/footer" %>
   </body>
 </html>
