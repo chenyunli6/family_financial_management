@@ -35,6 +35,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem "gon"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

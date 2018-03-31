@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :accounts
   resources :posts
   resources :login_logs, only: :index
+  resources :statistics, only: :index
 end

@@ -1,0 +1,26 @@
+<div class="statistics-container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">家庭财务报表</h3>
+    </div>
+    <div class="panel-body">
+      <p class="text-center">
+        余额：<%= @total_balance - @total_expenses %>
+        <span class="split"> | </span>
+        总收入：<%= @total_balance %>
+        <span class="split"> | </span>
+        总支出：<%= @total_expenses %>
+      </p>
+      <canvas id="assetsChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script>
+  var assetsPieChart = document.getElementById("assetsChart");
+  var myChart = new Chart(assetsPieChart, {
+      type: 'pie',
+      data: gon.asset_chart,
+      options: {}
+  })
+</script>
