@@ -1,0 +1,24 @@
+<div class="accounts-index-container">
+  <div class="actions">
+    <%= link_to "新增", new_account_path, class: "btn btn-primary pull-right" %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>日常收入</th>
+        <th>其它收入</th>
+        <th>日常支出</th>
+        <th>其它支出</th>
+        <th>总收入</th>
+        <th>总支出</th>
+        <th>盈余</th>
+        <th>标签</th>
+        <th>备注</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @accounts %>
+    </tbody>
+  </table>
+</div>

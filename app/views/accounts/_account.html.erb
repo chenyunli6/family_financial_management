@@ -1,0 +1,16 @@
+<tr>
+  <td><%= account.general_income %></td>
+  <td><%= account.general_expenses %></td>
+  <td><%= account.other_income %></td>
+  <td><%= account.other_expenses %></td>
+  <td><%= account.total_income %></td>
+  <td><%= account.total_expenses %></td>
+  <td><%= account.balance %></td>
+  <td><span class="label label-info"><%= account.label %></span></td>
+  <td><%= account.memo %></td>
+  <td>
+    <%= link_to "详情", account_path(account), class: "btn btn-info" %>
+    <%= link_to "编辑", edit_account_path(account), class: "btn btn-default" %>
+    <%= link_to "删除", account_path(account), method: :delete, class: "btn btn-danger" %>
+  </td>
+</tr>

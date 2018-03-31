@@ -1,0 +1,18 @@
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">收支详情</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">日常收入：<%= @account.general_income %></li>
+      <li class="list-group-item">其它收入：<%= @account.other_income %></li>
+      <li class="list-group-item">日常支出：<%= @account.general_expenses %></li>
+      <li class="list-group-item">其它支出：<%= @account.other_expenses %></li>
+      <li class="list-group-item">总收入：<%= @account.total_income %></li>
+      <li class="list-group-item">总支出：<%= @account.total_expenses %></li>
+      <li class="list-group-item">余额：<%= @account.balance %></li>
+    </ul>
+  </div>
+  <div class="panel-footer"><%= @account.created_at %></div>
+</div>
+<%= render "accounts/shared/links" %>
