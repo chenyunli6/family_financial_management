@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.recent
+    @posts = Post.published.recent
   end
 end

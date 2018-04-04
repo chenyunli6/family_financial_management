@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331120800) do
+ActiveRecord::Schema.define(version: 20180404082203) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "general_income",   default: "0.0"
@@ -52,11 +52,12 @@ ActiveRecord::Schema.define(version: 20180331120800) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      null: false
+    t.string   "title",                      null: false
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "is_hidden",  default: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

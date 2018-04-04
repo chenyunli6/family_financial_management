@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :authenticate_admin!
-  before_action :find_post, only: %i(show edit update destroy)
+  before_action :find_post, only: %i(show edit update destroy toggle_hidden)
 
   def index
-    @posts = Post.recent
+    @posts = Post.published.recent
   end
 
   def show
@@ -37,8 +37,20 @@ class PostsController < ApplicationController
     if @post.destroy
       redirect_to posts_path, notice: "删除成功！"
     else
-      redirect_to posts_path, notice: "删除失败！"
+      redirect_to posts_path, alert: "删除失败！"
     end
+  end
+
+  def toggle_hidden
+    if @post.is_hidden
+      @post.publish!
+      flash[:notice] = "文章发布成功！"
+    else
+      @post.hidden!
+      flash[:warning] = "文章隐藏成功！"
+    end
+
+    redirect_to posts_path
   end
 
   private

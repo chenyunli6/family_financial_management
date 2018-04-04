@@ -6,6 +6,7 @@
   <td>
     <%= link_to "详情", post_path(post), class: "btn btn-info" %>
     <%= link_to "编辑", edit_post_path(post), class: "btn btn-default" %>
+    <%= render_toggle_hidden_link(post) %>
     <%= link_to "删除", post_path(post), method: :delete, class: "btn btn-danger" %>
   </td>
 </tr>

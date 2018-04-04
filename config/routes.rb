@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :home, only: :index
   resources :accounts
-  resources :posts
+  resources :posts do
+    member do
+      post :toggle_hidden
+    end
+  end
   resources :login_logs, only: :index
   resources :statistics, only: :index
 end
