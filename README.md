@@ -27,5 +27,4 @@ family_financial_management:
   rpsec
 
 * Deployment instructions
-
-  rails s 本地启动
+  本地启动: rails s
