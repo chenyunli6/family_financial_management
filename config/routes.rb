@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :login_logs, only: :index
   resources :statistics, only: :index
+  resources :users, only: :index
 end
