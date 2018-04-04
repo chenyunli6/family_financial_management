@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i(show edit update destroy toggle_hidden)
 
   def index
-    @posts = Post.published.recent
+    @posts = Post.recent
   end
 
   def show
